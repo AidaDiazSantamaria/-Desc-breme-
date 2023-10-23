@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- 
+* @aidads         .
+*                / \           
+*              / ` /
+*           <_ <_  |
+*             /   |
+*           /     |
+*         /    \ /
+*    |\  (   ) | |
+*    \____\__ ) \_) 
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>¡Descúbreme!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/jpg" href="assets/img/ADS.png" />
+
+</head>
+
+<body>
+
+    <header class="titulo">
+        ¡Descúbreme!
+    </header>
+
+    <form action="../index.html" method="post">
+        <input type="submit" name="volver_index" value="VOLVER" class="btn btn-danger"
+            style="background-color: purple; border-color: purple;">
+    </form>
+    <div class="container">
+
+        <div class="row mt-2">
+            <div id="divBotones" class="col text-center">
+                <h3 id="msjGirar">¡Gira la pantalla, pulsa el botón y juega!</h3>
+
+                <button id="btnNuevo" class="btn btn-danger">Empieza a jugar</button>
+                <button id="btnPedir" disabled="disabled" class="btn btn-primary">Pista</button>
+                <img src="assets/img/INFO.png" alt="Icono Istrucciones" class="infoIcon" />
+                <div class="hidden-text">
+                    <p>¡Vamos a jugar!</p>
+                    <p>-Pulsa Empieza a jugar, introduce tu nombre y acepta.</p>
+                    <p>-Tendrás que ir seleccionando las cartas a DESCARTAR.</p>
+                    <p>-Pulsa Pista para ir obteniendo información del personaje</p>
+                    <p>misterioso.</p>
+                    <p>-Recuerda girar la pantalla si estás en una tablet o móvil.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Modal Nick-->
+        <div class="modal fade" id="nickModal" tabindex="-1" role="dialog" aria-labelledby="nickModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content modal-sandia">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nickModalLabel">¡Juguemos!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" id="inputNombre" placeholder="¿Cómo te llamas?">
+                        <p id="mensajeError" class="text-dark"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-naranja" id="btnAceptar">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <br>
+            <div class="divCartas-container">
+                <div id="juego" class="divCartas">
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <br>
+            <h1 id="jugador">¡Juguemos!</h1>
+            <div id="jugador-cartas" class="divCartas">
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="juego.js"></script>
+
+
+</body>
+
+</html>
